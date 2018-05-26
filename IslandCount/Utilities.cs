@@ -116,7 +116,7 @@ namespace IslandCount
                     if (ldArray[r, c] == 1 && !visited[r, c]) //if specific position is 1 and not visited yet
                     {
                         tempBiggestIsland = 0;
-                        //LD discover recursevely and mark as visited all the closer "1" 
+                        //LD discover recursively and mark as visited all the closer "1" 
                         exploreAndMarkTheAllLandsCloser(ldArray, r, c);
                         
                         if (tempBiggestIsland > biggestIsland)
