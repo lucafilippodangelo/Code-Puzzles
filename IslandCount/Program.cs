@@ -8,9 +8,8 @@ namespace IslandCount
         {
             /*
              LD EXERCISE "Count Number of Islands"
-                 Given a 2d grid map of '1's (land) and '0's (water), count the number of islands. 
+                 Given a 2d grid map of '1's (land) and '0's (water), find the biggest one.
                  An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically.
-             SOLUTION "use visited array to store all the visited cell and use queue to expand islands"
              */
 
             islandsQueries();
