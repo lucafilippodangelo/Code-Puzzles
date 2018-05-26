@@ -7,8 +7,25 @@ namespace IslandCount
     public static class Utilities
     {
         static bool[,] visited;
-        static int biggestIsland = 0;
-        static int tempBiggestIsland = 0;
+        public static int biggestIsland;
+        public static int tempBiggestIsland;
+
+        #region Multimensional array creation
+        
+        public static int[,] createArray5x5with6Islands()
+        {
+            //LD create
+            int[,] anArray = new int[5, 5] {
+                { 1,1,0,0,0 },
+                { 0,1,0,0,1 },
+                { 1,0,0,1,1 },
+                { 0,0,0,0,0 },
+                { 1,0,1,0,1 } };
+
+            consolePrintBidimensionalArray(anArray, 5);
+            //LD return
+            return anArray;
+        }
 
         public static int[,] createArray4x5with3Islands()
         {
@@ -37,6 +54,10 @@ namespace IslandCount
             //LD return
             return anArray;
         }
+
+        #endregion
+
+        #region output at console
         
         private static void consolePrintBidimensionalArray(int [,] anArray, int colNumber)
         {
@@ -49,6 +70,8 @@ namespace IslandCount
                 rowSplit++;
             }
         }
+
+        #endregion
 
         public static int countNumOfIslands(int[,] ldArray)
         {
@@ -75,7 +98,7 @@ namespace IslandCount
             Console.WriteLine(); Console.WriteLine(); Console.WriteLine("Number of Islands: " + count);
 
             return count;
-        }//countAndPrintNumOfIslands
+        }
 
         public static int countNumOfIslandsAndFindBiggest(int[,] ldArray)
         {
@@ -105,7 +128,7 @@ namespace IslandCount
 
             Console.WriteLine();  Console.WriteLine("Number of Islands: " + count + " of which the biggest is large: " + biggestIsland);
             return count;
-        }//countAndPrintNumOfIslands
+        }
 
         private static void exploreAndMarkTheAllLandsCloser(int[,] ldArray, int r, int c)
         {
@@ -115,7 +138,7 @@ namespace IslandCount
             if (visited[r, c]) return;// the node is already visited
             if (ldArray[r, c] != 1) return;// the node is zero
 
-            visited[r, c] = true;
+            visited[r, c] = true;//mark the node as visited
             tempBiggestIsland++;
 
             //LD visit recursively:
