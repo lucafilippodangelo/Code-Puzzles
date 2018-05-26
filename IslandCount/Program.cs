@@ -13,22 +13,25 @@ namespace IslandCount
              SOLUTION "use visited array to store all the visited cell and use queue to expand islands"
              */
 
-            countIslands();
+            islandsQueries();
             Console.ReadLine();
 
          }//main
 
-        private static void countIslands() {
+        private static void islandsQueries() {
 
             //LD test 3 islands
             int[,] ldArray;
             ldArray = Utilities.createArray4x5with3Islands(); 
-            Utilities.countNumOfIslands(ldArray);
+            Utilities.countNumOfIslandsAndFindBiggest(ldArray);
+
 
             //LD test 1 island
             int[,] ldArray002;
             ldArray002 = Utilities.createArray4x5with1Island();
-            Utilities.countNumOfIslands(ldArray002);
+            Utilities.countNumOfIslandsAndFindBiggest(ldArray002);
+
+
         }
 
     }//program

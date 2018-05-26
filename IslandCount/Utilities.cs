@@ -7,6 +7,8 @@ namespace IslandCount
     public static class Utilities
     {
         static bool[,] visited;
+        static int biggestIsland = 0;
+        static int tempBiggestIsland = 0;
 
         public static int[,] createArray4x5with3Islands()
         {
@@ -64,7 +66,7 @@ namespace IslandCount
                     if (ldArray[r, c] == 1 && !visited[r, c]) //if specific position is 1 and not visited yet
                     {
                         //LD discover recursevely and mark as visited all the closer "1" 
-                        NumIslandsHelper(ldArray, r, c);
+                        exploreAndMarkTheAllLandsCloser(ldArray, r, c);
                         count++;
                     }
                 }
@@ -75,7 +77,37 @@ namespace IslandCount
             return count;
         }//countAndPrintNumOfIslands
 
-        private static void NumIslandsHelper(int[,] ldArray, int r, int c)
+        public static int countNumOfIslandsAndFindBiggest(int[,] ldArray)
+        {
+            int count = 0;
+
+            var rows = ldArray.GetLength(0);
+            var columns = ldArray.GetLength(1);
+
+            visited = new bool[rows, columns];
+
+            for (int r = 0; r < rows; r++)
+            {
+                for (int c = 0; c < columns; c++)
+                {
+                    if (ldArray[r, c] == 1 && !visited[r, c]) //if specific position is 1 and not visited yet
+                    {
+                        tempBiggestIsland = 0;
+                        //LD discover recursevely and mark as visited all the closer "1" 
+                        exploreAndMarkTheAllLandsCloser(ldArray, r, c);
+                        
+                        if (tempBiggestIsland > biggestIsland)
+                            biggestIsland = tempBiggestIsland;
+                        count++;
+                    }
+                }
+            }
+
+            Console.WriteLine();  Console.WriteLine("Number of Islands: " + count + " of which the biggest is large: " + biggestIsland);
+            return count;
+        }//countAndPrintNumOfIslands
+
+        private static void exploreAndMarkTheAllLandsCloser(int[,] ldArray, int r, int c)
         {
             //LD return if:
             if (r < 0 || r >= ldArray.GetLength(0)) return;// "r" index bigger or smaller than grid row dimension
@@ -84,12 +116,13 @@ namespace IslandCount
             if (ldArray[r, c] != 1) return;// the node is zero
 
             visited[r, c] = true;
+            tempBiggestIsland++;
 
             //LD visit recursively:
-            NumIslandsHelper(ldArray, r - 1, c); // above
-            NumIslandsHelper(ldArray, r + 1, c); // below
-            NumIslandsHelper(ldArray, r, c - 1); // left
-            NumIslandsHelper(ldArray, r, c + 1); // right
+            exploreAndMarkTheAllLandsCloser(ldArray, r - 1, c); // above
+            exploreAndMarkTheAllLandsCloser(ldArray, r + 1, c); // below
+            exploreAndMarkTheAllLandsCloser(ldArray, r, c - 1); // left
+            exploreAndMarkTheAllLandsCloser(ldArray, r, c + 1); // right
         }
     }
 }
