@@ -5,7 +5,9 @@ VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MainSolution", "MainSolution\MainSolution.csproj", "{434644EB-19FE-47FD-B15F-8E49ABD817FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IslandCount", "IslandCount\IslandCount.csproj", "{6A1D46B7-88CE-4681-B456-092AC0F8DC48}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixIslandCount", "IslandCount\MatrixIslandCount.csproj", "{6A1D46B7-88CE-4681-B456-092AC0F8DC48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrayLeftRotation", "ArrayLeftRotation\ArrayLeftRotation.csproj", "{068830A2-8917-4192-8CA7-190CFDC51C03}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{6A1D46B7-88CE-4681-B456-092AC0F8DC48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A1D46B7-88CE-4681-B456-092AC0F8DC48}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A1D46B7-88CE-4681-B456-092AC0F8DC48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{068830A2-8917-4192-8CA7-190CFDC51C03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{068830A2-8917-4192-8CA7-190CFDC51C03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{068830A2-8917-4192-8CA7-190CFDC51C03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{068830A2-8917-4192-8CA7-190CFDC51C03}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
